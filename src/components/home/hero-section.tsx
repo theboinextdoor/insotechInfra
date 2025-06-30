@@ -52,7 +52,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <MotionSection className="relative mx-auto flex flex-col z-0 items-center justify-center py-16 sm:py-20 lg:py-28 transition-all animate-in px-4 sm:px-6 lg:px-12 w-full h-screen text-center  overflow-hidden">
+    <MotionSection className="relative mx-auto flex flex-col z-0 items-center justify-center py-16 sm:py-20 lg:py-20 transition-all animate-in px-4 sm:px-6 lg:px-12 w-full h-screen text-center  overflow-hidden">
       {/* Slideshow Background */}
       <div className="absolute inset-0 w-screen h-screen">
         {images.map((src, index) => (
@@ -73,7 +73,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative flex flex-col items-center justify-center z-10">
         {/* Tagline Badges */}
         <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
           {tagline.map((items) => (
@@ -97,7 +97,7 @@ const HeroSection = () => {
         </div>
 
         {/* Headline */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-12">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-2 text-3xl sm:text-5xl lg:text-7xl font-bold text-white mt-12">
           <h1 className="text-blue-300">
             <Typewriter
               words={['Insotech', 'Tough Team']}

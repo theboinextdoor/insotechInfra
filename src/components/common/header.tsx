@@ -7,7 +7,7 @@ import MobileNavBar from './navbar/navbar-mobile';
 
 const Header = () => {
   return (
-    <div className="container flex items-center justify-between py-4 md:py-6 lg:py-8 mx-auto px-4 md:px-6 lg:px-8 ">
+    <div className="container flex items-center justify-between py-2 md:py-4 lg:py-6 mx-auto px-4 md:px-6 lg:px-8 ">
       <MotionDiv
         variants={containerVarients}
         whileHover={{ scale: 1.15 }}

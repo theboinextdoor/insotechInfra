@@ -1,11 +1,6 @@
 'use client';
 import { Typewriter } from 'react-simple-typewriter';
-import {
-  MotionDiv,
-  MotionH1,
-  MotionP,
-  MotionSection,
-} from '../common/motion-wrapper';
+import { MotionDiv, MotionP } from '../common/motion-wrapper';
 import { itemVariants } from '@/utils/constant';
 import { Badge } from '../ui/badge';
 import { CheckCircle, Lightbulb, Sparkles, ArrowRight } from 'lucide-react';
@@ -52,7 +47,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <MotionSection className="relative mx-auto flex flex-col z-0 items-center justify-center py-16 sm:py-20 lg:py-20 transition-all animate-in px-4 sm:px-6 lg:px-12 w-full h-screen text-center  overflow-hidden">
+    <section className="relative  flex flex-col z-0 items-center justify-center py-16 sm:py-20 lg:py-20 transition-all animate-in px-4 sm:px-6 lg:px-12 w-full h-screen overflow-hidden">
       {/* Slideshow Background */}
       <div className="absolute inset-0 w-screen h-screen">
         {images.map((src, index) => (
@@ -97,10 +92,11 @@ const HeroSection = () => {
         </div>
 
         {/* Headline */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-2 text-3xl sm:text-5xl lg:text-7xl font-bold text-white mt-12">
-          <h1 className="text-blue-300">
+        <div className="flex flex-row items-center justify-center gap-2 text-3xl sm:text-4xl lg:text-7xl font-bold text-white mt-12">
+          <h1>Tough Team Infra</h1>
+          <h1 className="text-white">
             <Typewriter
-              words={['Insotech', 'Tough Team']}
+              words={[' Pvt', 'Ltd']}
               loop={true}
               cursorStyle="|"
               typeSpeed={100}
@@ -108,14 +104,6 @@ const HeroSection = () => {
               delaySpeed={1500}
             />
           </h1>
-          <MotionH1
-            variants={itemVariants}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.2, ease: 'easeIn' }}
-          >
-            Infra Pvt. Ltd.
-          </MotionH1>
         </div>
 
         {/* Subheadline */}
@@ -123,25 +111,23 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.3, ease: 'easeIn' }}
-          className="text-sm sm:text-base lg:text-lg mt-4 max-w-xl text-gray-200 text-center"
+          className="text-sm text-amber-400 sm:text-base text-center lg:text-lg mt-4 max-w-xl font-medium"
         >
           Delivering Innovative Infrastructure & Metro Projects with Excellence.
         </MotionP>
 
         {/* Button */}
-        <MotionDiv variants={itemVariants} whileHover={{ scale: 1.05 }}>
-          <Button
-            variant="link"
-            className="text-white mt-6 text-base sm:text-lg lg:text-xl rounded-full px-8 sm:px-10 lg:px-12 py-6 sm:py-7 lg:py-6 lg:mt-16 bg-gradient-to-r from-orange-500 to-rose-500 hover:from-rose-500 hover:to-orange-500 hover:no-underline shadow-lg"
-          >
-            <Link href="/career" className="flex gap-2 items-center">
-              <span>Career</span>
-              <ArrowRight className="animate-pulse" />
-            </Link>
-          </Button>
-        </MotionDiv>
+        <Button
+          variant="link"
+          className="text-white mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-8 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-amber-500 hover:to-orange-500 hover:no-underline shadow-lg "
+        >
+          <Link href="/contact" className="flex gap-2 items-center">
+            <span>Contact Us</span>
+            <ArrowRight className="animate-pulse" />
+          </Link>
+        </Button>
       </div>
-    </MotionSection>
+    </section>
   );
 };
 

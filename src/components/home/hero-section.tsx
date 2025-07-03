@@ -56,9 +56,8 @@ const HeroSection = () => {
             src={src}
             fill
             priority
-            objectPosition="bottom"
             alt={`slide-${index}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000  object-bottom${
               index === current ? 'opacity-100' : 'opacity-0'
             }`}
           />

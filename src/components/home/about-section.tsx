@@ -68,7 +68,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.5, delay: item.id * 0.07 }}
                 key={item.id}
-                className="p-6 rounded-md text-normal font-semibold border "
+                className="p-6 rounded-md text-lg font-semibold border bg-gradient-to-r from-emerald-800 via-slate-600 to-gray-400 text-white"
               >
                 {item.para}
               </MotionP>

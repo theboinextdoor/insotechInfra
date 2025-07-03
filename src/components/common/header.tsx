@@ -43,7 +43,7 @@ const Header = () => {
           variants={containerVarients}
           whileHover={{ scale: 1.35 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="relative w-10 h-10 md:w-40 md:h-12 lg:w-38 lg:h-10 "
+          className="relative w-12 h-12 md:w-40 md:h-12 lg:w-48 lg:h-12 "
         >
           <Link href="/">
             <Image
@@ -51,7 +51,7 @@ const Header = () => {
               alt="Logo"
               fill
               priority
-              className="object-contain "
+              className="object-contain  "
             />
           </Link>
         </MotionDiv>

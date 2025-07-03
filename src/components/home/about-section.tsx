@@ -1,9 +1,9 @@
 import React from 'react';
 import { MotionDiv, MotionHr, MotionP } from '../common/motion-wrapper';
 import { containerVarients, itemVariants } from '@/utils/constant';
-// import { Button } from '../ui/button';
-// import Link from 'next/link';
-// import { ArrowRight } from 'lucide-react';
+import { Button } from '../ui/button';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const AboutSection = () => {
   const paraList = [
@@ -68,7 +68,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.5, delay: item.id * 0.07 }}
                 key={item.id}
-                className="p-6 rounded-md text-lg font-semibold border bg-gradient-to-r from-emerald-800 via-slate-600 to-gray-400 text-white"
+                className="p-6 rounded-md text-lg font-semibold border bg-gradient-to-r from-slate-800 via-slate-600 to-gray-400 text-white"
               >
                 {item.para}
               </MotionP>
@@ -91,8 +91,9 @@ const AboutSection = () => {
             </div>
           </MotionDiv>
         </MotionDiv>
+
         {/* Button */}
-        {/* <MotionDiv
+        <MotionDiv
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -100,14 +101,15 @@ const AboutSection = () => {
         >
           <Button
             variant="link"
-            className="text-white mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-gradient-to-r from-emerald-500 to-emerald-300 hover:from-emerald-300 hover:to-emerald-500 hover:no-underline shadow-lg "
+            className="text-gray-700 mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-gradient-to-r from-blue-600 via-blue-500 to-slate-500 
+  hover:from-slate-500 hover:to-blue-600 hover:no-underline shadow-lg "
           >
             <Link href="/about " className="flex gap-2 items-center">
-              <span>ABOUT</span>
+              <span>About</span>
               <ArrowRight className="animate-pulse" />
             </Link>
           </Button>
-        </MotionDiv> */}
+        </MotionDiv>
       </div>
     </section>
   );

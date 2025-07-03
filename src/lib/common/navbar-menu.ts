@@ -5,9 +5,14 @@ type NavBarItems = {
 }
 export const navbarMenu: NavBarItems[] = [
   {
-    id: 1,
+    id: 0,
     label: 'Home',
     link: '/',
+  },
+  {
+    id: 1,
+    label: 'About Us',
+    link: '/about',
   },
   {
     id: 2,

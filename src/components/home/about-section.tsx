@@ -1,6 +1,9 @@
 import React from 'react';
 import { MotionDiv, MotionHr, MotionP } from '../common/motion-wrapper';
 import { containerVarients, itemVariants } from '@/utils/constant';
+// import { Button } from '../ui/button';
+// import Link from 'next/link';
+// import { ArrowRight } from 'lucide-react';
 
 const AboutSection = () => {
   const paraList = [
@@ -76,7 +79,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.07 }}
-            className="px-8 flex sm:flex-col gap-4"
+            className="px-8 flex lg:flex-col gap-6"
           >
             <div className="flex flex-col items-strat justify-center">
               <h1 className="text-4xl text-emerald-900">7+</h1>
@@ -88,6 +91,23 @@ const AboutSection = () => {
             </div>
           </MotionDiv>
         </MotionDiv>
+        {/* Button */}
+        {/* <MotionDiv
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto"
+        >
+          <Button
+            variant="link"
+            className="text-white mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-gradient-to-r from-emerald-500 to-emerald-300 hover:from-emerald-300 hover:to-emerald-500 hover:no-underline shadow-lg "
+          >
+            <Link href="/about " className="flex gap-2 items-center">
+              <span>ABOUT</span>
+              <ArrowRight className="animate-pulse" />
+            </Link>
+          </Button>
+        </MotionDiv> */}
       </div>
     </section>
   );

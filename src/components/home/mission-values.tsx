@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Users,
 } from 'lucide-react';
+import Image from 'next/image';
 
 const MissionAndValues = () => {
   const cardList = [
@@ -56,11 +57,22 @@ const MissionAndValues = () => {
     },
   ];
   return (
-    <section className="relative bg-slate-700">
+    <section className="relative ">
+      {/* Background Image with Backdrop */}
+      <div className="absolute inset-0 w-full h-full -z-10">
+        <Image
+          src="/gradient-background.jpg"
+          alt="Background"
+          fill
+          priority
+          quality={80}
+          className="object-cover brightness-75 backdrop-blur-md"
+        />
+      </div>
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
         {/* Heading */}
         <div className="flex items-center justify-start gap-2 ">
-          <h3 className="bg-linear-to-r from-orange-700 to-amber-400 text-transparent bg-clip-text py-2">
+          <h3 className="bg-linear-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text py-2">
             Mission and Values
           </h3>
           <span>
@@ -68,7 +80,7 @@ const MissionAndValues = () => {
               initial={{ width: 10 }}
               whileInView={{ width: 500 }}
               transition={{ duration: 1, ease: 'easeInOut' }}
-              className="h-[3px] bg-amber-300 md:block hidden  "
+              className="h-[3px] bg-slate-300 md:block hidden  "
             />
           </span>
         </div>
@@ -78,7 +90,7 @@ const MissionAndValues = () => {
           {cardList.map((item, index) => (
             <MotionDiv
               key={item.id}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -200 : 200 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.6,
@@ -90,12 +102,12 @@ const MissionAndValues = () => {
                 index % 2 === 0 ? 'justify-start' : 'justify-end'
               }`}
             >
-              <div className="border border-white/20 rounded-xl max-w-xl p-6 flex flex-col gap-4 items-start justify-center bg-white/5 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                <h2 className="text-white flex items-center gap-2 text-lg font-semibold">
+              <div className="border border-white/20 rounded-xl max-w-xl p-6 flex flex-col gap-4 items-start justify-center bg-white/5 backdrop-blur-sm hover:scale-105 transition-transform duration-300 hover:shadow-white hover:shadow-2xl  ">
+                <h2 className="text-white flex items-center gap-2 text-lg font-semibold  ">
                   {item.title}
                   {item.icon}
                 </h2>
-                <p className="text-white/70 text-sm">{item.desc}</p>
+                <p className="text-white text-sm">{item.desc}</p>
               </div>
             </MotionDiv>
           ))}

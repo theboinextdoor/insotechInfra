@@ -10,15 +10,19 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const HeroSection = () => {
-  const images = ['/slide1.jpg', '/slide2.jpg', '/slide3.jpg'];
-
+  const images = [
+    '/slide1.jpg',
+    '/slide2.jpg',
+    '/slide3.jpg',
+    '/slide4.jpg',
+    '/slide5.jpg',
+  ];
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000); // Change slide every 4 seconds
-
+    }, 4000);
     return () => clearInterval(interval);
   }, [images.length]);
 
@@ -47,37 +51,37 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative  flex flex-col z-0 items-center justify-center py-16 sm:py-20 lg:py-20 transition-all animate-in px-4 sm:px-6 lg:px-12 w-full h-screen overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center w-full min-h-screen h-screen max-h-[1400px] overflow-hidden px-4 sm:px-8 lg:px-12 xl:px-20 2xl:px-40 py-16 sm:py-20 lg:py-24 z-0">
       {/* Slideshow Background */}
-      <div className="absolute inset-0 w-screen h-screen">
+      <div className="absolute inset-0 w-full h-full">
         {images.map((src, index) => (
           <Image
             key={index}
             src={src}
             fill
             priority
+            quality={80}
             alt={`slide-${index}`}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000  object-bottom${
+            className={`absolute inset-0 w-full h-full object-cover object-bottom transition-opacity duration-1000 ${
               index === current ? 'opacity-100' : 'opacity-0'
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-black/50" />{' '}
-        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-xs" />
       </div>
 
       {/* Content */}
-      <div className="relative flex flex-col items-center justify-center z-10">
+      <div className="relative flex flex-col items-center justify-center text-center z-10 max-w-[90%] xl:max-w-6xl 2xl:max-w-7xl">
         {/* Tagline Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
           {tagline.map((items) => (
             <MotionDiv
+              key={items.id}
               variants={itemVariants}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: items.id * 0.2 + 0.1 }}
-              key={items.id}
-              className="relative p-[2px] overflow-hidden rounded-full bg-gradient-to-r from-blue-500  via-slate-500 to-red-500 animate-gradient-x group"
+              className="relative p-[2px] overflow-hidden rounded-full bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-700 animate-gradient-x group"
             >
               <Badge
                 variant="secondary"
@@ -91,11 +95,13 @@ const HeroSection = () => {
         </div>
 
         {/* Headline */}
-        <div className="flex flex-row items-center justify-center gap-2 text-3xl sm:text-4xl lg:text-7xl font-bold text-white mt-12">
-          <h1>Tough Team Infra</h1>
-          <h1 className="text-white">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-2 text-white mt-10 sm:mt-12">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-8xl font-bold">
+            Tough Team Infra
+          </h1>
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-8xl font-bold">
             <Typewriter
-              words={[' Pvt', 'Ltd']}
+              words={[' Pvt', ' Ltd']}
               loop={true}
               cursorStyle="|"
               typeSpeed={100}
@@ -107,22 +113,24 @@ const HeroSection = () => {
 
         {/* Subheadline */}
         <MotionP
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3, ease: 'easeIn' }}
-          className="text-sm text-amber-400 sm:text-base text-center lg:text-lg mt-4 max-w-xl font-medium"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-md sm:text-xl 2xl:text-3xl text-amber-400 font-medium mt-4 sm:mt-6 max-w-xl sm:max-w-2xl"
         >
-          Delivering Innovative Infrastructure & Metro Projects with Excellence.
+          Building the Future, Underground and Above
         </MotionP>
 
         {/* Button */}
         <Button
           variant="link"
-          className="text-white mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-8 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-amber-500 hover:to-orange-500 hover:no-underline shadow-lg "
+          className="text-white mt-6 sm:mt-10  rounded-xl px-6 sm:px-7 lg:px-7 py-6 sm:py-7  bg-gradient-to-r from-orange-500 to-amber-500 hover:from-amber-500 hover:to-orange-500 hover:no-underline shadow-lg"
         >
-          <Link href="/contact" className="flex gap-2 items-center">
-            <span>Contact Us</span>
-            <ArrowRight className="animate-pulse" />
+          <Link href="/project" className="flex gap-2 items-center">
+            <span className="text-base sm:text-sm md:text-md lg:text-lg ">
+              View Our Projects
+            </span>
+            <ArrowRight className="animate-pulse w-10 h-10" />
           </Link>
         </Button>
       </div>

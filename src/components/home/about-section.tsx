@@ -4,6 +4,7 @@ import { containerVarients, itemVariants } from '@/utils/constant';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+// import Image from 'next/image';
 
 const AboutSection = () => {
   const paraList = [
@@ -38,11 +39,27 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="relative" id="about">
-      <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
+    <section
+      className=" container relative w-full overflow-hidden py-4 md:py-20 lg:py-12 "
+      id="about"
+    >
+      {/* Background Image with Backdrop
+      <div className="absolute inset-0 w-full h-full -z-10">
+        <Image
+          src="/gradient-background.jpg"
+          alt="Background"
+          fill
+          priority
+          quality={80}
+          className="object-cover brightness-75 backdrop-blur-md"
+        />
+      </div> */}
+
+      {/* Main Container */}
+      <div className="py-10  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
         {/* Heading */}
         <div className="flex items-center justify-start gap-2 ">
-          <h3 className="bg-linear-to-r from-orange-700 to-amber-300 text-transparent bg-clip-text py-2">
+          <h3 className="bg-linear-to-r from-slate-700 to-amber-700 text-transparent bg-clip-text py-2">
             Backgroung & History
           </h3>
           <span>
@@ -63,12 +80,12 @@ const AboutSection = () => {
             {paraList.map((item) => (
               <MotionP
                 variants={itemVariants}
-                initial={{ opacity: 0, x: -100 }}
+                initial={{ opacity: 0, x: -200 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.5, delay: item.id * 0.07 }}
                 key={item.id}
-                className="p-6 rounded-md text-lg font-semibold border bg-gradient-to-r from-slate-800 via-slate-600 to-gray-400 text-white"
+                className="p-2 text-sm font-normal text-gray-900"
               >
                 {item.para}
               </MotionP>
@@ -96,13 +113,13 @@ const AboutSection = () => {
         <MotionDiv
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
+          whileHover={{ scale: 1.06 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto"
+          className="mx-auto flex justify-center"
         >
           <Button
             variant="link"
-            className="text-gray-700 mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-gradient-to-r from-blue-600 via-blue-500 to-slate-500 
-  hover:from-slate-500 hover:to-blue-600 hover:no-underline shadow-lg "
+            className="text-gray-700 mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-transparent hover:shadow-2xl hover:shadow-gray-700 hover:no-underline shadow-lg "
           >
             <Link href="/about " className="flex gap-2 items-center">
               <span>About</span>

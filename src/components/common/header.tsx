@@ -38,12 +38,13 @@ const Header = () => {
         showHeader ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
       }`}
     >
-      <div className="w-full flex items-center justify-between py-2 md:py-4 lg:py-6  px-4 md:px-6 lg:px-28">
+      <div className="w-full flex items-center justify-between py-2 md:py-4 lg:py-6 2xl:py-3 px-4 sm:px-6 lg:px-16 2xl:px-32">
+        {/* Logo */}
         <MotionDiv
           variants={containerVarients}
-          whileHover={{ scale: 1.35 }}
+          whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="relative w-12 h-12 md:w-40 md:h-12 lg:w-48 lg:h-12 "
+          className="relative w-12 h-12 md:w-40 md:h-12 lg:w-48 lg:h-14 "
         >
           <Link href="/">
             <Image
@@ -51,10 +52,12 @@ const Header = () => {
               alt="Logo"
               fill
               priority
-              className="object-contain  "
+              className="object-contain"
             />
           </Link>
         </MotionDiv>
+
+        {/* Navigation Menus */}
         <LaptopNavbar />
         <MobileNavBar />
       </div>

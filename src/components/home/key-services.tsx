@@ -1,6 +1,9 @@
 import React from 'react';
-import { MotionHr } from '../common/motion-wrapper';
+import { MotionDiv, MotionHr } from '../common/motion-wrapper';
 import { AnimatedPinDemo } from './animated-pin';
+import { Button } from '../ui/button';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const KeyService = () => {
   const serviceList = [
@@ -11,6 +14,7 @@ const KeyService = () => {
       link: '/services/utility-diversion-work',
       about:
         'Tough Team Infra specializes in the diversion of utilities such as sewer lines, water pipelines, storm water drains (SWD), electrical installations, and pre-fabricated buildings...',
+      image: '/slide1.jpg',
     },
     {
       id: 2,
@@ -19,22 +23,25 @@ const KeyService = () => {
       link: '/services/pipe-jacking-method',
       about:
         'A hydraulic method for installing underground pipes by pushing pre-assembled sections through the ground from a drive shaft to a reception shaft...',
+      image: '/slide2.jpg',
     },
     {
       id: 3,
       heading: 'Horizontal Directional Drilling (HDD)',
       title: '/horizontal-directional-drilling',
-      link: '/services/hdd',
+      link: '/services/horizontal-directional-drilling',
       about:
         'A steerable trenchless technique used to install underground pipes, conduits, and cables with minimal surface disruption...',
+      image: '/slide3.jpg',
     },
     {
       id: 4,
       heading: 'PEB (Pre-Engineered Building) Works',
       title: '/pre-engineered-building',
-      link: '/services/peb',
+      link: '/services/pre-engineered-building',
       about:
         'Tough Team Infra undertakes PEB works, including the construction of various structures...',
+      image: '/slide4.jpg',
     },
     {
       id: 5,
@@ -43,6 +50,7 @@ const KeyService = () => {
       link: '/services/road-construction',
       about:
         'Tough Team Infra specializes in road construction. Their work includes repairing, widening, and upgrading roads...',
+      image: '/slide5.jpg',
     },
     {
       id: 6,
@@ -51,13 +59,15 @@ const KeyService = () => {
       link: '/services/fabrication',
       about:
         'Tough Team Infra has expertise in fabrication. The company employs skilled fabricators, welders, and fitters...',
+      image: '/about.jpg',
     },
     {
       id: 7,
       heading: 'Cast-in-situ Structures',
-      title: 'cast-in-situ-structures',
-      link: '/services/cast-in-situ',
+      title: '/cast-in-situ-structures',
+      link: '/services/cast-in-situ-structures',
       about: 'The company specializes in cast-in-situ structures...',
+      image: '/aboutus.jpg',
     },
   ];
 
@@ -78,17 +88,37 @@ const KeyService = () => {
         </div>
 
         {/* Card Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 justify-items-center">
           {serviceList.map((items) => (
             <AnimatedPinDemo
               key={items.id}
-              title={items.heading}
+              title={items.title}
               href={items.link}
               heading={items.heading}
               about={items.about}
+              image={items.image}
             />
           ))}
         </div>
+
+        {/* Button */}
+        <MotionDiv
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          whileHover={{ scale: 1.06 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto flex justify-center "
+        >
+          <Button
+            variant="link"
+            className="text-gray-700 mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-transparent hover:shadow-2xl hover:shadow-gray-700 hover:no-underline shadow-lg "
+          >
+            <Link href="/about " className="flex gap-2 items-center">
+              <span>View More</span>
+              <ArrowRight className="animate-pulse" />
+            </Link>
+          </Button>
+        </MotionDiv>
       </div>
     </section>
   );

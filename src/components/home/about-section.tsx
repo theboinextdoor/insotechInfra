@@ -4,6 +4,7 @@ import { containerVarients, itemVariants } from '@/utils/constant';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import BgGradient from '../common/BgGradient';
 // import Image from 'next/image';
 
 const AboutSection = () => {
@@ -40,20 +41,10 @@ const AboutSection = () => {
 
   return (
     <section
-      className=" container relative w-full overflow-hidden py-4 md:py-20 lg:py-12 "
+      className="  relative w-full overflow-hidden py-4 md:py-20 lg:py-12 "
       id="about"
     >
-      {/* Background Image with Backdrop
-      <div className="absolute inset-0 w-full h-full -z-10">
-        <Image
-          src="/gradient-background.jpg"
-          alt="Background"
-          fill
-          priority
-          quality={80}
-          className="object-cover brightness-75 backdrop-blur-md"
-        />
-      </div> */}
+      <BgGradient />
 
       {/* Main Container */}
       <div className="py-10  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">

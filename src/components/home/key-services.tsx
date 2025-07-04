@@ -4,6 +4,7 @@ import { AnimatedPinDemo } from './animated-pin';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import BgGradient from '../common/BgGradient';
 
 const KeyService = () => {
   const serviceList = [
@@ -14,7 +15,7 @@ const KeyService = () => {
       link: '/services/utility-diversion-work',
       about:
         'Tough Team Infra specializes in the diversion of utilities such as sewer lines, water pipelines, storm water drains (SWD), electrical installations, and pre-fabricated buildings...',
-      image: '/slide1.jpg',
+      image: '/utility-diversion.jpg',
     },
     {
       id: 2,
@@ -23,7 +24,7 @@ const KeyService = () => {
       link: '/services/pipe-jacking-method',
       about:
         'A hydraulic method for installing underground pipes by pushing pre-assembled sections through the ground from a drive shaft to a reception shaft...',
-      image: '/slide2.jpg',
+      image: '/pipejacking.jpg',
     },
     {
       id: 3,
@@ -32,7 +33,7 @@ const KeyService = () => {
       link: '/services/horizontal-directional-drilling',
       about:
         'A steerable trenchless technique used to install underground pipes, conduits, and cables with minimal surface disruption...',
-      image: '/slide3.jpg',
+      image: '/hdd.jpg',
     },
     {
       id: 4,
@@ -41,7 +42,7 @@ const KeyService = () => {
       link: '/services/pre-engineered-building',
       about:
         'Tough Team Infra undertakes PEB works, including the construction of various structures...',
-      image: '/slide4.jpg',
+      image: '/PEB.jpg',
     },
     {
       id: 5,
@@ -50,7 +51,7 @@ const KeyService = () => {
       link: '/services/road-construction',
       about:
         'Tough Team Infra specializes in road construction. Their work includes repairing, widening, and upgrading roads...',
-      image: '/slide5.jpg',
+      image: '/roadcons.jpg',
     },
     {
       id: 6,
@@ -59,7 +60,7 @@ const KeyService = () => {
       link: '/services/fabrication',
       about:
         'Tough Team Infra has expertise in fabrication. The company employs skilled fabricators, welders, and fitters...',
-      image: '/about.jpg',
+      image: '/fabri.jpg',
     },
     {
       id: 7,
@@ -67,13 +68,14 @@ const KeyService = () => {
       title: '/cast-in-situ-structures',
       link: '/services/cast-in-situ-structures',
       about: 'The company specializes in cast-in-situ structures...',
-      image: '/aboutus.jpg',
+      image: '/cis.jpg',
     },
   ];
 
   return (
     <section className="relative">
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <BgGradient />
         {/* Heading */}
         <div className="flex items-center justify-start gap-2 mb-8">
           <h3 className="text-2xl md:text-3xl font-bold text-slate-900">

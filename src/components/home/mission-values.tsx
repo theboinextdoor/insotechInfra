@@ -73,7 +73,7 @@ const MissionAndValues = () => {
         {/* Heading */}
         <div className="flex items-center justify-start gap-2 ">
           <h3 className="bg-linear-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text py-2">
-            Mission and Values
+            Why Choose Us
           </h3>
           <span>
             <MotionHr
@@ -90,7 +90,7 @@ const MissionAndValues = () => {
           {cardList.map((item, index) => (
             <MotionDiv
               key={item.id}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -200 : 200 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 0.6,

@@ -4,6 +4,7 @@ import HeroSection from '@/components/home/hero-section';
 import KeyService from '@/components/home/key-services';
 
 import MissionAndValues from '@/components/home/mission-values';
+import WhatWeBuild from '@/components/home/what-we-build';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutSection />
       <MissionAndValues />
       <KeyService />
+      <WhatWeBuild />
     </div>
   );
 }

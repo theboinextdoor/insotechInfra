@@ -1,10 +1,11 @@
 import React from 'react';
-import { MotionDiv, MotionHr } from '../common/motion-wrapper';
+import { MotionDiv } from '../common/motion-wrapper';
 import { AnimatedPinDemo } from './animated-pin';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import BgGradient from '../common/BgGradient';
+import ContentHeading from './content-heading';
 
 const KeyService = () => {
   const serviceList = [
@@ -77,17 +78,10 @@ const KeyService = () => {
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <BgGradient />
         {/* Heading */}
-        <div className="flex items-center justify-start gap-2 mb-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
-            Key Summary
-          </h3>
-          <MotionHr
-            initial={{ width: 10 }}
-            whileInView={{ width: 300 }}
-            transition={{ duration: 1 }}
-            className="h-[3px] bg-slate-300 hidden md:block"
-          />
-        </div>
+        <ContentHeading
+          heading="Key Summary"
+          className="bg-linear-to-r from-slate-800 to-slate-500"
+        />
 
         {/* Card Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-10 justify-items-center">

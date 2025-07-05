@@ -1,5 +1,5 @@
 import React from 'react';
-import { MotionDiv, MotionHr } from '../common/motion-wrapper';
+import { MotionDiv } from '../common/motion-wrapper';
 import {
   BadgeCheck,
   CalendarCheck,
@@ -10,6 +10,7 @@ import {
   Users,
 } from 'lucide-react';
 import Image from 'next/image';
+import ContentHeading from './content-heading';
 
 const MissionAndValues = () => {
   const cardList = [
@@ -70,20 +71,10 @@ const MissionAndValues = () => {
         />
       </div>
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
-        {/* Heading */}
-        <div className="flex items-center justify-start gap-2 ">
-          <h3 className="bg-linear-to-r from-slate-900 to-slate-700 text-transparent bg-clip-text py-2">
-            Why Choose Us
-          </h3>
-          <span>
-            <MotionHr
-              initial={{ width: 10 }}
-              whileInView={{ width: 500 }}
-              transition={{ duration: 1, ease: 'easeInOut' }}
-              className="h-[3px] bg-slate-300 md:block hidden  "
-            />
-          </span>
-        </div>
+        <ContentHeading
+          heading="Why Choose Us"
+          className="bg-linear-to-r from-gray-900 via-slate-800 to-gray-700"
+        />
 
         {/* Contents */}
         <div className="mt-6 flex flex-col gap-6 w-full">

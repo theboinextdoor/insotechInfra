@@ -1,10 +1,11 @@
 import React from 'react';
-import { MotionDiv, MotionHr, MotionP } from '../common/motion-wrapper';
+import { MotionDiv, MotionP } from '../common/motion-wrapper';
 import { containerVarients, itemVariants } from '@/utils/constant';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import BgGradient from '../common/BgGradient';
+import ContentHeading from './content-heading';
 // import Image from 'next/image';
 
 const AboutSection = () => {
@@ -47,25 +48,13 @@ const AboutSection = () => {
       <BgGradient />
 
       {/* Main Container */}
-      <div className="py-10  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
-        {/* Heading */}
-        <div className="flex items-center justify-start gap-2 ">
-          <h3 className="bg-linear-to-r from-slate-700 to-amber-700 text-transparent bg-clip-text py-2">
-            Backgroung & History
-          </h3>
-          <span>
-            <MotionHr
-              initial={{ width: 10 }}
-              whileInView={{ width: 500 }}
-              transition={{ duration: 1, ease: 'easeInOut' }}
-              className="h-[3px] bg-amber-300 md:block hidden  "
-            />
-          </span>
-        </div>
+      <div className="pt-10  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
+        <ContentHeading heading="Background & History" />
+
         {/* Paragraph */}
         <MotionDiv
           variants={containerVarients}
-          className="mt-8 flex flex-col lg:flex-row gap-4 rounded-md p-2 max-w-4xl"
+          className="mt-6 flex flex-col lg:flex-row gap-4 rounded-md p-2 max-w-4xl"
         >
           <div className="flex flex-col items-center justify-between gap-2">
             {paraList.map((item) => (

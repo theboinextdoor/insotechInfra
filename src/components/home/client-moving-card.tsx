@@ -9,10 +9,10 @@ export function ClientMovingCard() {
   return (
     <section className="relative">
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <BgGradient />
+        <BgGradient gradient="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500" />
         <ContentHeading
           heading="Trusted by Industry Leaders"
-          className="bg-linear-to-r from-slate-800 to-slate-500"
+          className="bg-linear-to-r from-slate-800 to-slate-500 text-[16px]"
         />
         <div className="flex flex-col md:flex-row items-strat justify-between gap-0 md:gap-12">
           {/* Tagline */}
@@ -31,7 +31,7 @@ export function ClientMovingCard() {
             </p>
           </div>
         </div>
-        <div className="h-[10rem] rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden gap-4">
+        <div className="h-[12rem] sm:h-[14rem] rounded-xl flex flex-col antialiased items-center justify-center relative overflow-hidden gap-4 p-4 ">
           <InfiniteMovingCards items={cards} direction="right" speed="fast" />
         </div>
       </div>

@@ -101,8 +101,12 @@ export function ExpandableCardDemo({ project }: { project: string }) {
                 ease: 'easeInOut',
                 type: 'spring',
               }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: '0px 8px 20px rgba(255, 255, 255, 1)',
+              }}
               onClick={() => setActive(card)}
-              className="cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white dark:bg-neutral-800 transition"
+              className="cursor-pointer rounded-xl overflow-hidden shadow-md bg-white dark:bg-neutral-800"
             >
               <Image
                 src={card.src}

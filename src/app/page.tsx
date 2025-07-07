@@ -1,5 +1,7 @@
 // import BgGradient from '@/components/common/BgGradient';
 import AboutSection from '@/components/home/about-section';
+import { ClientMovingCard } from '@/components/home/client-moving-card';
+
 import HeroSection from '@/components/home/hero-section';
 import KeyService from '@/components/home/key-services';
 
@@ -15,6 +17,7 @@ export default function Home() {
       <MissionAndValues />
       <KeyService />
       <WhatWeBuild />
+      <ClientMovingCard />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import ContentHeading from './content-heading';
 import { MotionHr } from '../common/motion-wrapper';
+import { ExpandableCardDemo } from '../common/ExpandableCardDemo';
 
 const WhatWeBuild = () => {
   const [activeLink, setActiveLink] = useState<string>(
@@ -21,12 +22,12 @@ const WhatWeBuild = () => {
 
         <div className="flex flex-col md:flex-row items-end justify-between gap-0 md:gap-12">
           {/* Tagline */}
-          <h1 className="text-3xl md:text-5xl flex-1 font-bold mt-4 leading-tight max-w-4xl bg-gradient-to-r from-orange-700 to-amber-300 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-5xl flex-1 font-bold mt-4 leading-tight max-w-4xl bg-gradient-to-r from-orange-700 tracking-wide to-amber-300 bg-clip-text text-transparent">
             Transforming Challenges into Lasting Infrastructure
           </h1>
 
           {/* brief explanation of work */}
-          <div className="mt-8 space-y-6 flex-1 text-white/80 max-w-4xl text-base  leading-relaxed ">
+          <div className="mt-8 space-y-6 flex-1 text-white/80 max-w-4xl text-base tracking-wide  leading-relaxed ">
             <p className="p-2">
               Tough Team Infra stands as a trusted name in India’s construction
               industry, delivering critical infrastructure solutions with
@@ -64,6 +65,12 @@ const WhatWeBuild = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Project Carousel Section */}
+        <div className=" mt-8 ">
+          {/* Card Demo */}
+          <ExpandableCardDemo project={activeLink} />
         </div>
       </div>
     </section>

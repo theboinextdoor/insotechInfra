@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {/* Logo */}
         <div className="flex flex-col gap-4">
-          <Image src="/footerlogo.png" alt="logo" width={120} height={100} />
+          <Image src="/logo.png" alt="logo" width={120} height={100} />
           <p className="text-sm text-gray-200 animate-pulse">
             Innovate. Inspire. Achieve
           </p>

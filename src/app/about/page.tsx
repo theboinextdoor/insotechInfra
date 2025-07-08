@@ -1,4 +1,5 @@
 import CompanyOverview from '@/components/about/company-overview';
+import LeaderShipTeam from '@/components/about/leader-ship-team';
 import OurPriority from '@/components/about/our-priority';
 import BgGradient from '@/components/common/BgGradient';
 import React from 'react';
@@ -9,8 +10,8 @@ const AboutPage = () => {
       <BgGradient />
       <CompanyOverview />
       <OurPriority />
-      {/* <LeaderShipTeam />
-      <OrganizationalStructure />
+      <LeaderShipTeam />
+      {/*   <OrganizationalStructure />
       <CommitmenttoQualitySafety /> */}
     </section>
   );

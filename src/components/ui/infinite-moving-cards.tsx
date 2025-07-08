@@ -89,14 +89,14 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item) => (
           <li
-            className="relative h-36 w-36 sm:h-40 sm:w-40 shrink-0 rounded-2xl border border-zinc-200 bg-gradient-to-b from-neutral-50 to-neutral-100 shadow-lg overflow-hidden transition-transform hover:scale-105 dark:border-zinc-700 dark:from-neutral-800 dark:to-neutral-900"
+            className="relative h-36 w-36 sm:h-40 sm:w-40 shrink-0 rounded-2xl border border-zinc-200 bg-gradient-to-b from-neutral-50 to-neutral-100 shadow-lg overflow-hidden transition-transform hover:scale-110 dark:border-zinc-700 dark:from-neutral-800 dark:to-neutral-900"
             key={item.id}
           >
             <Image
               src={item.img}
               alt={item.alt}
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover rounded-2xl "
               priority
             />
           </li>

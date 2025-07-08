@@ -4,6 +4,7 @@ import React from 'react';
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
 import BgGradient from '../common/BgGradient';
 import ContentHeading from './content-heading';
+import { movingCards } from '@/lib/home/moving-cards';
 
 export function ClientMovingCard() {
   return (
@@ -31,48 +32,14 @@ export function ClientMovingCard() {
             </p>
           </div>
         </div>
-        <div className="h-[12rem] sm:h-[14rem] rounded-xl flex flex-col antialiased items-center justify-center relative overflow-hidden gap-4 p-4 ">
-          <InfiniteMovingCards items={cards} direction="right" speed="fast" />
+        <div className="h-[20rem] sm:h-[28rem] md:h-[32rem]  flex flex-col antialiased items-center justify-center relative overflow-hidden gap-4 p-4 ">
+          <InfiniteMovingCards
+            items={movingCards}
+            direction="right"
+            speed="fast"
+          />
         </div>
       </div>
     </section>
   );
 }
-
-const cards = [
-  {
-    id: 1,
-    img: '/afcons.png',
-    alt: 'Afcons',
-  },
-  {
-    id: 2,
-    img: '/DMRC.png',
-    alt: 'dmrc',
-  },
-  {
-    id: 3,
-    img: '/mmrda.png',
-    alt: 'mmrda',
-  },
-  {
-    id: 4,
-    img: '/kec.png',
-    alt: 'kec',
-  },
-  {
-    id: 5,
-    img: '/sp.png',
-    alt: 'sp',
-  },
-  {
-    id: 6,
-    img: '/download.png',
-    alt: 'mcgm',
-  },
-  {
-    id: 7,
-    img: '/jk.png',
-    alt: 'Jk',
-  },
-];

@@ -11,7 +11,6 @@ import WhatWeBuild from '@/components/home/what-we-build';
 export default function Home() {
   return (
     <div>
-      {/* <BgGradient /> */}
       <HeroSection />
       <AboutSection />
       <MissionAndValues />

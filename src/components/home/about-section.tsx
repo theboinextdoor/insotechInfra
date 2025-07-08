@@ -42,14 +42,14 @@ const AboutSection = () => {
 
   return (
     <section
-      className="  relative w-full overflow-hidden py-4 md:py-20 lg:py-12 "
+      className="relative w-full overflow-hidden py-4 md:py-20 lg:py-12 "
       id="about"
     >
       <BgGradient />
 
       {/* Main Container */}
       <div className="pt-10  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
-        <ContentHeading heading="Background & History" />
+        <ContentHeading heading="Background & History" lineWidth={400} />
 
         {/* Paragraph */}
         <MotionDiv

@@ -67,7 +67,7 @@ const HeroSection = () => {
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-xs" />
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-xs" />
       </div>
 
       {/* Content */}

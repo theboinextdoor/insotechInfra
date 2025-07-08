@@ -74,7 +74,7 @@ const KeyService = () => {
   ];
 
   return (
-    <section className="relative" id="keyservices">
+    <section className="relative">
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <BgGradient />
         {/* Heading */}

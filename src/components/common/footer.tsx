@@ -1,28 +1,10 @@
+import { ourService, quickLink } from '@/lib/common/footer-quick-link';
+import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const Footer = () => {
-  const ourService = [
-    'Utility Diversion Work',
-    'Pipe Jacking Method',
-    'Horizontal Directional Drilling',
-    'Pre-Engineered Building Work',
-    'Road Construction',
-    'Fabrication',
-    'Cast-in-situ Structure',
-  ];
-
-  const quickLink = [
-    { id: 1, title: 'Home', link: '/' },
-    { id: 2, title: 'About', link: '/about' },
-    { id: 3, title: 'Services', link: '/services' },
-    { id: 4, title: 'Project', link: '/project' },
-    { id: 5, title: 'Registration', link: '/registration' },
-    { id: 6, title: 'Blog', link: '/blog' },
-    { id: 7, title: 'Contact', link: '/contact' },
-  ];
-
   return (
     <footer className="relative bg-[#00502F] text-white py-10 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -44,9 +26,12 @@ const Footer = () => {
               <li key={index} className="hover:text-white cursor-pointer">
                 <Link
                   href="#keyservices"
-                  className="hover:text-white transition-colors duration-200"
+                  className="hover:text-white transition-colors duration-200 flex items-center "
                 >
-                  {item}
+                  <ChevronRight className="h-4 w-4   mr-2 text-amber-400 " />
+                  <span className="group transition-all hover:translate-x-3">
+                    {item}
+                  </span>
                 </Link>
               </li>
             ))}
@@ -63,9 +48,12 @@ const Footer = () => {
               <li key={item.id}>
                 <Link
                   href={item.link}
-                  className="hover:text-white transition-colors duration-200"
+                  className="hover:text-white transition-colors duration-200 flex items-center "
                 >
-                  {item.title}
+                  <ChevronRight className="h-4 w-4   mr-2 text-amber-400 " />
+                  <span className="group transition-all hover:translate-x-3">
+                    {item.title}
+                  </span>
                 </Link>
               </li>
             ))}
@@ -78,10 +66,12 @@ const Footer = () => {
             Contact Us
           </h3>
           <ul className="space-y-2 text-gray-300 text-sm">
-            <li>📞 +91-931-072-7282 / 958-272-7282</li>
+            <li className="flex flex-col gap-1">
+              <div>📞 +91-931-072-7282</div>
+              <div>📞 +91-958-272-7282</div>
+            </li>
             <li className="cursor-pointer">
               <Link href="mailto:insotechinfra@gmail.com">
-                {' '}
                 📧 insotechinfra@gmail.com
               </Link>
             </li>

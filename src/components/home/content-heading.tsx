@@ -5,9 +5,10 @@ import { cn } from '@/lib/utils';
 interface ContentProps {
   heading: string;
   className?: string;
+  lineWidth?: number;
 }
 
-const ContentHeading = ({ heading, className }: ContentProps) => {
+const ContentHeading = ({ heading, className, lineWidth }: ContentProps) => {
   return (
     <div className="flex items-center justify-start gap-2 ">
       <div className="md:hidden h-[2px] w-16 bg-yellow-400" />
@@ -22,7 +23,7 @@ const ContentHeading = ({ heading, className }: ContentProps) => {
       <span>
         <MotionHr
           initial={{ width: 10 }}
-          whileInView={{ width: 500 }}
+          whileInView={{ width: lineWidth || 500 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
           className="hidden sm:block h-[3px] bg-amber-300 md:block  "
         />

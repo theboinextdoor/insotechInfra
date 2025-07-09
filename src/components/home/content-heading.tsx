@@ -14,7 +14,7 @@ const ContentHeading = ({ heading, className, lineWidth }: ContentProps) => {
       <div className="md:hidden h-[2px] w-16 bg-yellow-400" />
       <h3
         className={cn(
-          'bg-linear-to-r from-slate-700 to-amber-700 text-transparent bg-clip-text py-2',
+          'bg-linear-to-r from-slate-700 to-amber-700 text-transparent bg-clip-text py-2 font-heading',
           className
         )}
       >

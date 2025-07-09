@@ -14,7 +14,7 @@ export const leaders: Leader[] = [
   {
     id: 1,
     name: 'Jazib Zia',
-    role: 'Director',
+    role: 'Managing Director',
     bio: "Jazib Zia is a dynamic and visionary leader with extensive experience in the civil engineering and infrastructure development sector. As a Director at Tough Team Infra, his strategic acumen and unwavering commitment have been instrumental in driving the company's growth and successful execution of complex projects across India. ",
     photoSrc: '/owner.jpg', // Replace with actual path like '/images/team/jazib-zia.jpg'
     email: 'insotechinfra@gmail.com',
@@ -23,7 +23,7 @@ export const leaders: Leader[] = [
   {
     id: 2,
     name: 'Shazia Khan',
-    role: 'Director',
+    role: 'General Manager',
     bio: "Shazia Khan is a dedicated Director at Tough Team Infra, bringing a robust foundation in operational management and a keen eye for detail. Her commitment to upholding the highest standards of quality and efficiency ensures seamless project delivery and contributes significantly to client satisfaction. ",
     photoSrc: '/placeholder-shazia.jpg', // Replace with actual path like '/images/team/shazia-khan.jpg'
   },

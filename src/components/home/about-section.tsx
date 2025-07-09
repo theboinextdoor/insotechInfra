@@ -48,8 +48,12 @@ const AboutSection = () => {
       <BgGradient />
 
       {/* Main Container */}
-      <div className="pt-10  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
-        <ContentHeading heading="Background & History" lineWidth={400} />
+      <div className="pt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
+        <ContentHeading
+          heading="Background & History"
+          lineWidth={400}
+          className="font-condensed font-semibold"
+        />
 
         {/* Paragraph */}
         <MotionDiv
@@ -65,7 +69,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.5, delay: item.id * 0.07 }}
                 key={item.id}
-                className="p-2 text-sm font-normal text-gray-900"
+                className="p-2 text-[16px] font-normal text-black leading-6 "
               >
                 {item.para}
               </MotionP>
@@ -102,7 +106,7 @@ const AboutSection = () => {
             className="text-gray-700 mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-transparent hover:shadow-2xl hover:shadow-gray-700 hover:no-underline shadow-lg "
           >
             <Link href="/about " className="flex gap-2 items-center">
-              <span>About</span>
+              <span className="font-condensed font-semibold">About</span>
               <ArrowRight className="animate-pulse" />
             </Link>
           </Button>

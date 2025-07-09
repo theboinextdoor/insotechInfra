@@ -1,4 +1,5 @@
-import { ourService, quickLink } from '@/lib/common/footer-quick-link';
+import { ourService } from '@/lib/common/footer-quick-link';
+import { navbarMenu } from '@/lib/common/navbar-menu';
 import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -44,7 +45,7 @@ const Footer = () => {
             Quick Links
           </h3>
           <ul className="space-y-2 text-gray-300">
-            {quickLink.map((item) => (
+            {navbarMenu.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.link}
@@ -52,7 +53,7 @@ const Footer = () => {
                 >
                   <ChevronRight className="h-4 w-4   mr-2 text-amber-400 " />
                   <span className="group transition-all hover:translate-x-3">
-                    {item.title}
+                    {item.label}
                   </span>
                 </Link>
               </li>

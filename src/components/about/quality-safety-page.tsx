@@ -7,7 +7,6 @@ import {
   Award,
   ShieldCheck,
   ClipboardList,
-  // Lightbulb,
   HeartHandshake,
   FileDown,
   Rocket,
@@ -18,6 +17,8 @@ import {
   FlaskConical,
 } from 'lucide-react'; // Comprehensive icons for policies
 import { MotionDiv } from '../common/motion-wrapper';
+import ContentHeading from '../home/content-heading';
+import Link from 'next/link';
 
 export default function QualitySafetyPage() {
   const downloadLinks = {
@@ -111,6 +112,29 @@ export default function QualitySafetyPage() {
     },
   ];
 
+  const policyCard = [
+    {
+      id: 1,
+      label: ' Our Quality Policy',
+      desc: 'We are committed to delivering engineering excellence through the consistent provision of high-quality products and services that meet or exceed client expectations and regulatory requirements',
+      icon: (
+        <Award className="text-yellow-500 mb-6" size={64} strokeWidth={1.5} />
+      ),
+    },
+    {
+      id: 2,
+      label: 'Our Safety Policy',
+      desc: 'Our Safety Policy is founded on the principle that the health and well-being of our employees, partners, and the public are paramount. We are committed to providing a safe and healthy working environment, preventing accidents, and minimizing occupational risks. This policy outlines our proactive approach to safety management, continuous improvement, and compliance with all applicable safety laws and regulations.',
+      icon: (
+        <ShieldCheck
+          className="text-red-500 mb-6"
+          size={64}
+          strokeWidth={1.5}
+        />
+      ),
+    },
+  ];
+
   return (
     <section className="relative mt-12">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -122,19 +146,15 @@ export default function QualitySafetyPage() {
           viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          <motion.h1
-            className="text-5xl md:text-6xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 mb-6"
-            variants={itemVariants}
-          >
-            Commitment to Quality & Safety
-          </motion.h1>
-          <motion.p
-            className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
-            variants={itemVariants}
-          >
+          <ContentHeading
+            heading="Commitment to Quality & Safety"
+            className="text-base font-semibold uppercase tracking-wide bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent font-barlow"
+            lineWidth={400}
+          />
+          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight bg-gradient-to-r from-amber-500 via-yellow-400 to-stone-600 bg-clip-text text-transparent">
             Our unwavering dedication to excellence and safety forms the bedrock
             of every project we undertake.
-          </motion.p>
+          </h1>
         </motion.div>
 
         {/* Policy Overviews Section */}
@@ -142,52 +162,23 @@ export default function QualitySafetyPage() {
           className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          {/* Quality Policy Card */}
-          <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col items-center p-8 border border-blue-100 dark:border-blue-700"
-            variants={itemVariants}
-          >
-            <Award
-              className="text-yellow-500 mb-6"
-              size={64}
-              strokeWidth={1.5}
-            />
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-              Our Quality Policy
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center">
-              We are committed to delivering engineering excellence through the
-              consistent provision of high-quality products and services that
-              meet or exceed client expectations and regulatory requirements.
-            </p>
-          </motion.div>
-
-          {/* Safety Policy Overview Card */}
-          <motion.div
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col items-center p-8 border border-red-100 dark:border-red-700"
-            variants={itemVariants}
-          >
-            <ShieldCheck
-              className="text-red-500 mb-6"
-              size={64}
-              strokeWidth={1.5}
-            />
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-              Our Safety Policy
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center">
-              Our Safety Policy is founded on the principle that the health and
-              well-being of our employees, partners, and the public are
-              paramount. We are committed to providing a safe and healthy
-              working environment, preventing accidents, and minimizing
-              occupational risks. This policy outlines our proactive approach to
-              safety management, continuous improvement, and compliance with all
-              applicable safety laws and regulations.
-            </p>
-          </motion.div>
+          {policyCard.map((item) => (
+            <motion.div
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col items-center p-8 border border-blue-100 dark:border-blue-700"
+              variants={itemVariants}
+              key={item.id}
+            >
+              {item.icon}
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+                {item.label}
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Key Elements of Safety Policy */}
@@ -246,22 +237,22 @@ export default function QualitySafetyPage() {
             className="flex flex-col sm:flex-row justify-center gap-6"
             variants={itemVariants}
           >
-            <a
+            <Link
               href={downloadLinks.qualityPolicyPdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-out border border-green-600"
+              className="inline-flex items-center justify-center px-8 py-4 bg-green-600 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-out border border-green-600 font-barlow"
             >
               <FileDown className="mr-3" size={24} /> Download Quality Policy
-            </a>
-            <a
+            </Link>
+            <Link
               href={downloadLinks.safetyPolicyPdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-red-600 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-red-700 transform hover:scale-105 transition-all duration-300 ease-out border border-red-600"
+              className="inline-flex items-center justify-center px-8 py-4 bg-red-600 text-white font-semibold text-lg rounded-full shadow-lg hover:bg-red-700 transform hover:scale-105 transition-all duration-300 ease-out border border-red-600 font-barlow "
             >
               <FileDown className="mr-3" size={24} /> Download Safety Policy
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

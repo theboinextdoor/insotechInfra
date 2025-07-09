@@ -19,31 +19,33 @@ type Steps = {
 
 const steps: Steps[] = [
   {
-    icon: <ShieldCheck size={48} strokeWidth={1.5} />,
+    icon: (
+      <ShieldCheck size={48} strokeWidth={1.5} className="text-yellow-400" />
+    ),
     label: 'Safety',
     description:
       'Ensuring the health, safety, and well-being of our employees, clients, and stakeholders is our foremost responsibility.',
   },
   {
-    icon: <Gavel size={48} strokeWidth={1.5} />,
+    icon: <Gavel size={48} strokeWidth={1.5} className="text-cyan-400" />,
     label: 'Compliance & Regulations', // Slightly shortened for conciseness
     description:
       'We strictly adhere to all applicable laws, industry standards, and regulatory requirements to maintain operational excellence and legal integrity.',
   },
   {
-    icon: <Smile size={48} strokeWidth={1.5} />,
+    icon: <Smile size={48} strokeWidth={1.5} className="text-emrald-400" />,
     label: 'Client Satisfaction',
     description:
       'Delivering high-quality products and services that meet or exceed client expectations, fostering trust and long-term relationships.',
   },
   {
-    icon: <BadgeCheck size={48} strokeWidth={1.5} />,
+    icon: <BadgeCheck size={48} strokeWidth={1.5} className="text-rose-400" />,
     label: 'Company Reputation',
     description:
       'Upholding a strong and positive corporate image through ethical practices, professional conduct, and consistent performance.',
   },
   {
-    icon: <TrendingUp size={48} strokeWidth={1.5} />,
+    icon: <TrendingUp size={48} strokeWidth={1.5} className="text-teal-400" />,
     label: 'Sustainable Profitability', // Added "Sustainable" for better context
     description:
       'Achieving sustainable growth and profitability to support innovation, employee development, and continued value to stakeholders.',
@@ -64,15 +66,15 @@ const OurPriorities = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Content Heading */}
+
         <ContentHeading
           heading="Our Core Priorities"
-          className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent font-extrabold text-center text-3xl md:text-4xl  lg:text-6xl"
-          lineWidth={300}
+          className="text-base font-semibold uppercase tracking-wide bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent font-barlow  "
+          lineWidth={400}
         />
-        <p className="mt-4 text-center text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
-          At Tough Team Infra, our foundation is built upon a clear set of
-          priorities that guide every decision and action.
-        </p>
+        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight bg-linear-to-r from-amber-700 via-emerald-300 to-amber-400 bg-clip-text text-transparent">
+          Building the Future with Strength, Vision, and Precision.
+        </h1>
 
         {/* Cards Grid */}
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
@@ -82,7 +84,7 @@ const OurPriorities = () => {
               initial={{ opacity: 0, y: 50, scale: 0.95 }} // Added scale for a subtler pop-in
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: idx * 0.15, ease: 'easeOut' }}
-              viewport={{ once: false, amount: 0.4 }}
+              // viewport={{ once: false, amount: 0.4 }}
               className="p-6 md:p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-green-400 transition duration-300 shadow-xl hover:shadow-2xl group cursor-pointer" // Added cursor-pointer
             >
               <div className="flex flex-col items-center gap-6 text-center">
@@ -97,11 +99,11 @@ const OurPriorities = () => {
                     {step.icon}
                   </div>
                 </div>
-                <h4 className="text-2xl font-bold text-white tracking-wide">
+                <h4 className="text-2xl font-bold text-white  font-condensed tracking-wider ">
                   {step.label}
                 </h4>{' '}
                 {/* Larger font, tracking-wide */}
-                <p className="text-base text-gray-300 leading-relaxed">
+                <p className="text-base text-white leading-relaxed font-medium">
                   {step.description}
                 </p>{' '}
                 {/* Base font, relaxed leading */}

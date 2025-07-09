@@ -1,15 +1,17 @@
-// tailwind.config.js
-module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+// tailwind.config.ts
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      backdropBlur: {
-        xs: '2px', // optional if using 'backdrop-blur-xs'
-      },
-      animation: {
-        'spin-slow': 'spin 20s linear infinite',
+      fontFamily: {
+        barlow: ['var(--font-barlow)', 'sans-serif'],
+        condensed: ['var(--font-barlow-condensed)', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
+
+export default config;

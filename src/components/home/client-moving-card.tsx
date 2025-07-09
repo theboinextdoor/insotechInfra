@@ -13,7 +13,7 @@ export function ClientMovingCard() {
         <BgGradient gradient="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500" />
         <ContentHeading
           heading="Trusted by Industry Leaders"
-          className="bg-linear-to-r from-slate-800 to-slate-500 text-[16px]"
+          className="bg-linear-to-r from-slate-800 to-slate-500 text-[16px] font-barlow font-semibold "
         />
         <div className="flex flex-col md:flex-row items-strat justify-between gap-0 md:gap-12">
           {/* Tagline */}

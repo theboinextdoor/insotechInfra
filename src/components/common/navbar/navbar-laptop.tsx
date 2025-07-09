@@ -6,7 +6,11 @@ const LaptopNavbar = () => {
   return (
     <div className="hidden sm:flex items-center justify-between gap-3 lg:gap-6 relative">
       {navbarMenu.map((items) => (
-        <NavLink key={items.id} href={items.link} className="mr-3 text-[16px]">
+        <NavLink
+          key={items.id}
+          href={items.link}
+          className="mr-3 text-[16px] font-barlow font-semibold"
+        >
           {items.label}
         </NavLink>
       ))}

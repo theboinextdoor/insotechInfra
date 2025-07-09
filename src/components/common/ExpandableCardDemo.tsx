@@ -59,7 +59,7 @@ export function ExpandableCardDemo({ project }: { project: string }) {
                 className="w-full h-72 object-cover"
               />
               <div className="p-6 space-y-4">
-                <h2 className="text-2xl font-bold text-black dark:text-white">
+                <h2 className="text-2xl font-bold text-black dark:text-white font-barlow  ">
                   {active.projectHeading}
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300">
@@ -68,7 +68,7 @@ export function ExpandableCardDemo({ project }: { project: string }) {
                 <a
                   href={active.ctaLink}
                   target="_blank"
-                  className="inline-block mt-4 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md hover:scale-105 transition"
+                  className="inline-block mt-4 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md hover:scale-105 transition font-barlow font-semibold "
                 >
                   {active.ctaText}
                 </a>
@@ -116,7 +116,7 @@ export function ExpandableCardDemo({ project }: { project: string }) {
                 className="w-full h-60 object-cover"
               />
               <div className="p-4 space-y-2">
-                <MotionH3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
+                <MotionH3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 font-barlow ">
                   {card.projectHeading}
                 </MotionH3>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400">

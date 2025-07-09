@@ -37,8 +37,8 @@ export const navbarMenu: NavBarItems[] = [
   },
   {
     id: 6,
-    label: 'Blog',
-    link: '/blog',
+    label: 'Gallery',
+    link: '/gallery',
   },
   {
     id: 7,

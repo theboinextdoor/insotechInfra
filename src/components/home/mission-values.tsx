@@ -17,43 +17,45 @@ const MissionAndValues = () => {
     {
       id: 1,
       title: 'Commitment to Quality',
-      icon: <BadgeCheck className="w-6 h-6 text-green-500" />,
+      icon: <BadgeCheck className="w-6 h-6 text-green-500  animate-pulse" />,
       desc: 'At Tough Team Infra, quality is the cornerstone of everything we do. We deliver projects that meet the highest standards through strict quality control, skilled workmanship, and adherence to industry best practices.',
     },
     {
       id: 2,
       title: 'Responsibility',
-      icon: <CalendarCheck className="w-6 h-6 text-emerald-500" />,
+      icon: (
+        <CalendarCheck className="w-6 h-6 text-emerald-500 animate-pulse" />
+      ),
       desc: 'We take full responsibility for delivering safe, sustainable, and high-quality solutions. Accountability, ethical practices, and respect for communities guide every aspect of our work.',
     },
     {
       id: 3,
       title: 'Safety First',
-      icon: <ShieldCheck className="w-6 h-6 text-amber-500" />,
+      icon: <ShieldCheck className="w-6 h-6 text-amber-500 animate-pulse" />,
       desc: 'Safety is our top priority. We are committed to creating safe work environments by implementing rigorous safety standards, proactive training, and a culture where every employee feels empowered to prioritize well-being.',
     },
     {
       id: 4,
       title: 'Innovation & Adaptability',
-      icon: <Lightbulb className="w-6 h-6 text-blue-500" />,
+      icon: <Lightbulb className="w-6 h-6 text-blue-500 animate-pulse" />,
       desc: 'We embrace modern technologies, advanced techniques, and innovative solutions to overcome challenges and deliver efficient, future-ready infrastructure.',
     },
     {
       id: 5,
       title: 'Sustainability & Environmental Care',
-      icon: <Leaf className="w-6 h-6 text-green-700" />,
+      icon: <Leaf className="w-6 h-6 text-green-700 animate-pulse" />,
       desc: 'We strive to minimize our environmental footprint through sustainable construction practices, resource efficiency, and responsible project planning.',
     },
     {
       id: 6,
       title: 'Integrity & Transparency',
-      icon: <Handshake className="w-6 h-6 text-sky-500" />,
+      icon: <Handshake className="w-6 h-6 text-sky-500 animate-pulse" />,
       desc: 'Honesty, fairness, and transparency are fundamental to how we operate. We believe in building trust with clients, partners, and communities through clear communication and ethical conduct.',
     },
     {
       id: 7,
       title: 'Teamwork & Collaboration',
-      icon: <Users className="w-6 h-6 text-orange-500" />,
+      icon: <Users className="w-6 h-6 text-orange-500 animate-pulse" />,
       desc: 'Our strength lies in collaboration. We foster teamwork within our organization and with our clients, ensuring successful project execution and mutual growth.',
     },
   ];
@@ -70,10 +72,12 @@ const MissionAndValues = () => {
           className="object-cover brightness-75 backdrop-blur-md"
         />
       </div>
+
+      {/* Main Content */}
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
         <ContentHeading
           heading="Why Choose Us"
-          className="bg-linear-to-r from-gray-900 via-slate-800 to-gray-700"
+          className="bg-linear-to-r from-gray-900 via-slate-800 to-gray-700 font-barlow font-semibold"
         />
 
         {/* Contents */}
@@ -93,12 +97,14 @@ const MissionAndValues = () => {
                 index % 2 === 0 ? 'justify-start' : 'justify-end'
               }`}
             >
-              <div className="border border-white/20 rounded-xl max-w-xl p-6 flex flex-col gap-4 items-start justify-center bg-white/5 backdrop-blur-sm hover:scale-105 transition-transform duration-300 hover:shadow-white hover:shadow-2xl  ">
-                <h2 className="text-white flex items-center gap-2 text-lg font-semibold  ">
+              <div className="border border-white/20 rounded-xl max-w-xl p-6 flex flex-col gap-4 items-start justify-center bg-white/5 backdrop-blur-sm hover:scale-105 transition-transform duration-300 hover:shadow-white hover:shadow-2xl ">
+                <h2 className="text-white flex items-center gap-2 text-lg font-semibold tracking-widest">
                   {item.title}
                   {item.icon}
                 </h2>
-                <p className="text-white text-sm">{item.desc}</p>
+                <p className="text-white text-md font-normal leading-6 ">
+                  {item.desc}
+                </p>
               </div>
             </MotionDiv>
           ))}

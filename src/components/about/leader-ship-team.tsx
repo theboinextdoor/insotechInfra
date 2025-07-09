@@ -15,6 +15,7 @@ import { MotionDiv } from '../common/motion-wrapper';
 import { variants } from '@/utils/constant';
 import { leaders } from '@/utils/leader-array';
 import ContentHeading from '../home/content-heading';
+import Link from 'next/link';
 
 export default function LeaderShipTeam() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,7 +42,11 @@ export default function LeaderShipTeam() {
     <section className="relative py-16 md:py-24 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="mb-28 ">
-          <ContentHeading heading="Our Visionary Leadership " lineWidth={400} />
+          <ContentHeading
+            heading="Our Visionary Leadership "
+            lineWidth={400}
+            className="font-barlow font-semibold"
+          />
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold capitalize mt-4 leading-tight max-w-5xl bg-gradient-to-r from-black to-gray-700 tracking-wide bg-clip-text text-transparent ">
             Building Trust, Inspiring Growth – Leadership at the Core of Tough
@@ -60,12 +65,12 @@ export default function LeaderShipTeam() {
               animate="center"
               exit="exit"
               className={`
-    flex flex-col 
-    ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} 
-    items-center rounded-xl shadow-lg dark:shadow-2xl 
-    bg-white dark:bg-gray-800 overflow-hidden 
-    border border-gray-200 dark:border-gray-700 
-    w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                            flex flex-col 
+                              ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} 
+                                     items-center rounded-xl shadow-lg dark:shadow-2xl 
+                                       bg-white dark:bg-gray-800 overflow-hidden 
+                                           border border-gray-200 dark:border-gray-700 
+                                                  w-full absolute top-1/2 left-1/2 -translate-x-1/2         -translate-y-1/2
   `}
             >
               {/* Image Section */}
@@ -92,7 +97,7 @@ export default function LeaderShipTeam() {
 
               {/* Details Section */}
               <div className="w-full md:w-1/2 p-5 sm:p-8 md:p-10 text-center md:text-left">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900 dark:text-white font-condensed ">
                   {currentLeader.name}
                 </h3>
                 <p className="text-green-600 dark:text-green-400 font-semibold text-lg sm:text-xl flex items-center justify-center md:justify-start gap-2 mb-4">
@@ -104,22 +109,22 @@ export default function LeaderShipTeam() {
 
                 <div className="flex flex-col items-center md:items-start space-y-3">
                   {currentLeader.email && (
-                    <a
+                    <Link
                       href={`mailto:${currentLeader.email}`}
-                      className="flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-base sm:text-lg transition-colors"
+                      className="flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-base sm:text-lg transition-colors font-barlow font-semibold"
                     >
                       <Mail size={20} className="mr-2" />
                       {currentLeader.email}
-                    </a>
+                    </Link>
                   )}
                   {currentLeader.phone && (
-                    <a
+                    <Link
                       href={`tel:${currentLeader.phone.replace(/\s/g, '')}`}
-                      className="flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-base sm:text-lg transition-colors"
+                      className="flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 text-base sm:text-lg transition-colors font-barlow font-semibold"
                     >
                       <Phone size={20} className="mr-2" />
                       {currentLeader.phone}
-                    </a>
+                    </Link>
                   )}
                 </div>
               </div>

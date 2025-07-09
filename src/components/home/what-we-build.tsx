@@ -17,12 +17,12 @@ const WhatWeBuild = () => {
         {/* Heading Line & Label */}
         <ContentHeading
           heading="What We Build"
-          className="text-white/70 text-[16px]"
+          className="text-white/70 text-[16px] font-barlow font-semibold"
         />
 
         <div className="flex flex-col md:flex-row items-end justify-between gap-0 md:gap-12">
           {/* Tagline */}
-          <h1 className="text-3xl md:text-5xl flex-1 font-bold mt-4 leading-tight max-w-4xl bg-gradient-to-r from-orange-700 tracking-wide to-amber-300 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-5xl flex-1 font-bold mt-4 leading-tight max-w-4xl bg-gradient-to-r from-orange-700 tracking-wide to-amber-300 bg-clip-text text-transparent font-condensed ">
             Transforming Challenges into Lasting Infrastructure
           </h1>
 
@@ -45,7 +45,7 @@ const WhatWeBuild = () => {
             {menuItems.map((item) => (
               <div key={item}>
                 <h3
-                  className={`text-[17px] sm:text-[19px] md:text-lg cursor-pointer transition ${
+                  className={`text-[17px] sm:text-[19px] md:text-lg cursor-pointer transition font-condensed font-semibold tracking-widest ${
                     activeLink === item
                       ? 'text-amber-400 '
                       : 'hover:text-amber-300'

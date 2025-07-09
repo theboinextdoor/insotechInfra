@@ -88,7 +88,7 @@ const HeroSection = () => {
                 className="relative flex items-center px-4 sm:px-6 py-2 text-sm sm:text-base font-medium bg-white rounded-full group-hover:bg-gray-50 transition-colors duration-200"
               >
                 {items.icon}
-                <span className="text-blue-600">{items.label}</span>
+                <span className="text-blue-600 font-barlow">{items.label}</span>
               </Badge>
             </MotionDiv>
           ))}
@@ -96,12 +96,9 @@ const HeroSection = () => {
 
         {/* Headline */}
         <div className="flex flex-row flex-wrap items-center justify-center gap-2 text-white mt-10 sm:mt-12">
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-8xl font-bold">
-            Tough Team Infra
-          </h1>
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl 2xl:text-8xl font-bold">
+          <h1 className="text-3xl font-condensed sm:text-5xl lg:text-7xl 2xl:text-8xl font-bold">
             <Typewriter
-              words={[' Pvt', ' Ltd']}
+              words={['Insotech Infra Pvt Ltd', 'Tough Team Infra']}
               loop={true}
               cursorStyle="|"
               typeSpeed={100}
@@ -116,7 +113,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-md sm:text-xl 2xl:text-3xl text-amber-400 font-medium mt-4 sm:mt-6 max-w-xl sm:max-w-2xl"
+          className="text-md sm:text-xl 2xl:text-3xl text-amber-400  mt-4 sm:mt-6 max-w-xl sm:max-w-2xl font-barlow font-bold"
         >
           Building the Future, Underground and Above
         </MotionP>
@@ -127,7 +124,7 @@ const HeroSection = () => {
           className="text-white mt-6 sm:mt-10  rounded-xl px-6 sm:px-7 lg:px-7 py-6 sm:py-7  bg-gradient-to-r from-orange-500 to-amber-500 hover:from-amber-500 hover:to-orange-500 hover:no-underline shadow-lg"
         >
           <Link href="/project" className="flex gap-2 items-center">
-            <span className="text-base sm:text-sm md:text-md lg:text-lg ">
+            <span className="text-base sm:text-sm md:text-md lg:text-lg font-barlow font-semibold">
               View Our Projects
             </span>
             <ArrowRight className="animate-pulse w-10 h-10" />

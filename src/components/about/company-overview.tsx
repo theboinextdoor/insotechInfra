@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import ContentHeading from '../home/content-heading';
 import Image from 'next/image';
+import BgGradient from '../common/BgGradient';
 // import Image from 'next/image';
 
 const CompanyOverview = () => {
@@ -25,10 +26,11 @@ const CompanyOverview = () => {
 
   return (
     <section className="relative w-full py-10 md:py-12 bg-white overflow-hidden">
+      <BgGradient gradient="bg-gradient-to-r from-red-300 via-emrald-400 to-pink-500" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ContentHeading
           heading="About Tough Team Infra"
-          className="text-base font-semibold uppercase tracking-wide text-green-700"
+          className="text-base font-semibold uppercase tracking-wide text-green-700 font-barlow "
           lineWidth={400}
         />
 
@@ -39,7 +41,7 @@ const CompanyOverview = () => {
               <span className="block">Where</span>
               <span className="text-green-700">Vision Meets Structure</span>
             </h1>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 leading-6 font-normal text-[16px]">
               <p>
                 Welcome to <strong>TOUGH TEAM INFRA</strong>, a pioneering force
                 in India’s infrastructure development. With over{' '}

@@ -80,7 +80,7 @@ const KeyService = () => {
         {/* Heading */}
         <ContentHeading
           heading="Key Summary"
-          className="bg-linear-to-r from-slate-800 to-slate-500"
+          className="bg-linear-to-r from-slate-800 to-slate-500 font-condensed font-semibold"
         />
 
         {/* Card Grid */}
@@ -109,7 +109,10 @@ const KeyService = () => {
             variant="link"
             className="text-gray-700 mt-6 text-base sm:text-lg lg:text-xl rounded-xl px-6 sm:px-10 lg:px-12 py-8 sm:py-7 lg:py-6 lg:mt-16 bg-transparent hover:shadow-2xl hover:shadow-gray-700 hover:no-underline shadow-lg "
           >
-            <Link href="/about " className="flex gap-2 items-center">
+            <Link
+              href="/about "
+              className="flex gap-2 items-center font-condensed font-semibold"
+            >
               <span>View More</span>
               <ArrowRight className="animate-pulse" />
             </Link>

@@ -16,7 +16,7 @@ const MobileNavBar = () => {
   };
 
   return (
-    <div className="sm:hidden ">
+    <div className="sm:hidden">
       {/* Toggle Button */}
       <div className="p-2">
         {openMenu ? (
@@ -30,7 +30,7 @@ const MobileNavBar = () => {
         )}
       </div>
 
-      {/* Slide-in Menu with Framer Motion */}
+      {/* Slide-in Menu */}
       <AnimatePresence>
         {openMenu && (
           <MotionDiv
@@ -43,9 +43,8 @@ const MobileNavBar = () => {
               stiffness: 300,
               damping: 30,
               duration: 0.2,
-              // ease: easeIn,
             }}
-            className="fixed top-0 right-0 min-h-screen w-2/3 shadow-2xl shadow-neutral-500/10 z-50 bg-white mt-14.5"
+            className="fixed top-0 right-0 min-h-screen min-w-2/3 z-50 mt-14.5 bg-white/90 backdrop-blur-md shadow-2xl shadow-neutral-500/10"
           >
             <div className="py-18 flex items-center justify-center flex-col space-y-6">
               {navbarMenu.map((item) => (
@@ -59,22 +58,12 @@ const MobileNavBar = () => {
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: item.id * 0.2 }}
-                    className="text-[16px] text-slate-900 font-semibold drop-shadow-xl"
+                    className="text-[16px] text-slate-900 font-semibold drop-shadow-xl font-barlow"
                   >
                     {item.label}
                   </MotionP>
                 </Link>
               ))}
-
-              {/* Arrow in Circle Button */}
-              {/* <div className="mt-8">
-                <div
-                  onClick={() => setOpenMenu(false)}
-                  className="w-12 h-12 rounded-full bg-linear-to-r from-amber-200 to-orange-300 flex items-center justify-center cursor-pointer hover:bg-blue-700 transition"
-                >
-                  <ArrowRight size={24} className="text-gray-700" />
-                </div>
-              </div> */}
             </div>
           </MotionDiv>
         )}

@@ -14,6 +14,8 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Only apply scroll behavior on devices >= 768px (i.e., not mobile)
+      if (window.innerWidth < 768) return;
       const currentScroll = window.scrollY;
 
       if (currentScroll > lastScrollY) {

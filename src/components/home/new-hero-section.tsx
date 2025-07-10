@@ -36,7 +36,7 @@ const NewHeroSection = () => {
     },
   ];
   return (
-    <ImagesSlider className="min-h-screen" images={images}>
+    <ImagesSlider className=" min-h-screen" images={images}>
       <motion.div
         initial={{
           opacity: 0,
@@ -47,7 +47,7 @@ const NewHeroSection = () => {
           y: 0,
         }}
         transition={{
-          duration: 0.6,
+          duration: 0.4,
         }}
         className="z-50 flex flex-col justify-center items-center"
       >

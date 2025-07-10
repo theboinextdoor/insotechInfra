@@ -20,6 +20,8 @@ import {
   CheckCircle, // For success message icon
   XCircle, // For error message icon
 } from 'lucide-react';
+import BgGradient from '@/components/common/BgGradient';
+import { MotionDiv } from '@/components/common/motion-wrapper';
 
 // // Define types for contact persons
 // interface ContactPerson {
@@ -133,6 +135,7 @@ export default function ContactPage() {
     subject: '',
     message: '',
   });
+
   const [formStatus, setFormStatus] = useState<
     'idle' | 'submitting' | 'success' | 'error'
   >('idle');
@@ -188,10 +191,10 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-950 text-gray-900 dark:text-gray-100 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        {/* Header Section */}
-        <motion.div
+    <section className="relative">
+      <div className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50 d text-gray-900 dark:text-gray-100 overflow-hidden">
+        <BgGradient gradient="bg-gradient-to-r from-cyan-400 to-pink-300" />
+        <MotionDiv
           className="text-center mb-16 md:mb-20"
           initial="hidden"
           whileInView="visible"
@@ -211,7 +214,11 @@ export default function ContactPage() {
             We&apos;d love to hear from you! Whether you have a project in mind,
             a question, or just want to connect, our team is ready to assist.
           </motion.p>
-        </motion.div>
+        </MotionDiv>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Header Section */}
 
         {/* Main Content Grid: Form on Left, Details on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">

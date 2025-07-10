@@ -9,14 +9,14 @@ type NavBarItems = {
 
 
 export const navbarMenu: NavBarItems[] = [
-  {
-    id: 1,
-    label: 'Home',
-    link: '/',
-  },
+  // {
+  //   id: 1,
+  //   label: 'Home',
+  //   link: '/',
+  // },
   {
     id: 2,
-    label: 'About',
+    label: 'Company',
     link: '/about',
   },
   {

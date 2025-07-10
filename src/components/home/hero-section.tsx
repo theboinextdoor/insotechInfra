@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 const HeroSection = () => {
   const images = [
-    '/slide1.jpg',
+    // '/slide1.jpg',
     '/slide2.jpg',
     '/slide3.jpg',
     '/slide4.jpg',

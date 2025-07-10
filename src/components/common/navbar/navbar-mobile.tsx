@@ -1,6 +1,6 @@
 'use client';
 
-import { AlignJustify, X } from 'lucide-react';
+import { AlignJustify, ArrowRight, X } from 'lucide-react';
 import { AnimatePresence } from 'motion/react';
 import { MotionDiv, MotionP } from '../motion-wrapper';
 import { containerVarients } from '@/utils/constant';
@@ -25,7 +25,7 @@ const MobileNavBar = () => {
           <AlignJustify
             size={28}
             onClick={toggleMenu}
-            className="cursor-pointer"
+            className="cursor-pointer text-white"
           />
         )}
       </div>
@@ -44,9 +44,14 @@ const MobileNavBar = () => {
               damping: 30,
               duration: 0.2,
             }}
-            className="fixed top-0 right-0 min-h-screen min-w-2/3 z-50 mt-14.5 bg-white/90 backdrop-blur-md shadow-2xl shadow-neutral-500/10"
+            className="fixed top-0 right-0 min-h-screen min-w-4/5 z-50  bg-blue-950 backdrop-blur-md shadow-2xl shadow-neutral-500/10"
           >
             <div className="py-18 flex items-center justify-center flex-col space-y-6">
+              <ArrowRight
+                size={28}
+                onClick={toggleMenu}
+                className="cursor-pointer text-white"
+              />
               {navbarMenu.map((item) => (
                 <Link
                   key={item.id}
@@ -58,7 +63,7 @@ const MobileNavBar = () => {
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: item.id * 0.2 }}
-                    className="text-[16px] text-slate-900 font-semibold drop-shadow-xl font-barlow"
+                    className="text-[16px]  font-semibold drop-shadow-xl font-barlow bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent  "
                   >
                     {item.label}
                   </MotionP>

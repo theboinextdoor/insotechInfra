@@ -4,7 +4,7 @@ import { containerVarients, itemVariants } from '@/utils/constant';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import BgGradient from '../common/BgGradient';
+// import BgGradient from '../common/BgGradient';
 import ContentHeading from './content-heading';
 // import Image from 'next/image';
 
@@ -42,17 +42,17 @@ const AboutSection = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden py-4 md:py-20 lg:py-12 "
+      className="relative w-full overflow-hidden py-4 md:py-20 lg:py-12 bg-[#00693C]  "
       id="about"
     >
-      <BgGradient />
+      {/* <BgGradient /> */}
 
       {/* Main Container */}
-      <div className="pt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
+      <div className="pt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12  ">
         <ContentHeading
           heading="Background & History"
           lineWidth={400}
-          className="font-condensed font-semibold"
+          className="font-condensed  text-3xl  sfont-semibold bg-gradient-to-r from-white via-cyan-400 to-white"
         />
 
         {/* Paragraph */}
@@ -69,7 +69,7 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 transition={{ duration: 0.5, delay: item.id * 0.07 }}
                 key={item.id}
-                className="p-2 text-[16px] font-normal text-black leading-6 "
+                className="p-2 text-[18px] font-normal text-white leading-6 "
               >
                 {item.para}
               </MotionP>
@@ -83,12 +83,12 @@ const AboutSection = () => {
             className="px-8 flex lg:flex-col gap-6"
           >
             <div className="flex flex-col items-strat justify-center">
-              <h1 className="text-4xl text-emerald-900">7+</h1>
-              <p className="text-lg">Years in Operation</p>
+              <h1 className="text-4xl text-amber-600">7+</h1>
+              <p className="text-lg text-white">Years in Operation</p>
             </div>
             <div>
-              <h1 className="text-4xl text-emerald-900">20+</h1>
-              <p className="text-lg">Projects</p>
+              <h1 className="text-4xl text-amber-600">20+</h1>
+              <p className="text-lg text-white">Projects</p>
             </div>
           </MotionDiv>
         </MotionDiv>

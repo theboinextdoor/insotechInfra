@@ -92,7 +92,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#00693C] text-white pt-10 border-t ">
+    <footer className="bg-[#2F3E46] text-white pt-10 border-t ">
       {/* Desktop View */}
       <div className="hidden md:grid grid-cols-2 lg:grid-cols-4  gap-6 max-w-7xl mx-auto px-6 pb-10 m">
         {/* Image */}

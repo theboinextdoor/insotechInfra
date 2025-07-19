@@ -3,19 +3,20 @@ import React from 'react';
 import { PinContainer } from '../ui/3d-pin';
 import Image from 'next/image';
 
+interface AnimatedPinProps {
+  title: string;
+  href: string;
+  heading: string;
+  description: string;
+  image: string;
+}
 export function AnimatedPinDemo({
   title,
   href,
   heading,
-  about,
+  description,
   image,
-}: {
-  title: string;
-  href: string;
-  heading: string;
-  about: string;
-  image: string;
-}) {
+}: AnimatedPinProps) {
   return (
     <div className="h-[25rem] w-full flex items-center justify-center ">
       <PinContainer title={title} href={href}>
@@ -26,7 +27,7 @@ export function AnimatedPinDemo({
 
           <div className="text-base !m-0 !p-0 font-normal">
             <span className="text-slate-800 line-clamp-3 font-barlow leading-6">
-              {about}
+              {description}
             </span>
           </div>
 

@@ -36,30 +36,49 @@ const CompanyOverview = () => {
 
         <div className="mt-4 grid md:grid-cols-2 gap-10 items-center">
           {/* Text Content */}
-          <div className="space-y-6 text-gray-800 text-sm md:text-md leading-relaxed">
+          <div className="space-y-6 text-gray-950 text-sm md:text-md leading-relaxed">
             <h1 className="text-4xl sm:text-5xl font-extrabold text-black leading-tight">
               <span className="block">Where</span>
               <span className="text-green-700">Vision Meets Structure</span>
             </h1>
             <div className="flex flex-col gap-6 leading-6 font-normal text-[16px]">
               <p>
-                Welcome to <strong>TOUGH TEAM INFRA</strong>, a pioneering force
-                in India’s infrastructure development. With over{' '}
-                <strong>7+ years</strong> of unwavering commitment and
-                expertise, we specialize in a diverse range of civil engineering
-                services across PAN India.
+                Absolutely! Building on the strong foundation you&apos;ve
+                provided, here are some additional lines that emphasize{' '}
+                <strong>TOUGH TEAM INFRA&apos;s</strong> core strengths and
+                vision:
               </p>
               <p>
-                Our strong presence in <strong>Delhi</strong> and{' '}
-                <strong>Mumbai</strong> marks our dedication to timely delivery,
-                innovation, and long-lasting client relationships. From utility
-                diversion to structural fabrication, we continually raise the
-                bar for infrastructure excellence.
+                At <strong>TOUGH TEAM INFRA</strong>, our success is built on a
+                foundation of uncompromised quality, meticulous planning, and
+                rigorous safety standards. We leverage cutting-edge technology
+                and innovative methodologies to transform ambitious blueprints
+                into tangible realities, ensuring every project, regardless of
+                its scale, is executed with precision and efficiency.
               </p>
               <p>
-                <strong>TOUGH TEAM INFRA</strong> is more than just a
-                construction firm — it’s a promise to build smarter, stronger,
-                and more sustainable cities for tomorrow.
+                Our team of seasoned engineers, skilled technicians, and
+                dedicated professionals are the bedrock of our operations. Their
+                collective expertise and problem-solving acumen enable us to
+                navigate complex challenges, deliver on stringent timelines, and
+                consistently exceed client expectations. We believe in fostering
+                collaborative partnerships, working closely with our clients to
+                understand their unique needs and deliver tailor-made solutions
+                that stand the test of time.
+              </p>
+              <p>
+                As we continue to expand our footprint across India, our
+                unwavering commitment remains to contribute significantly to the
+                nation&apos;s progress by constructing vital infrastructure that
+                empowers communities and drives economic growth. We are not just
+                building structures; we are crafting legacies of resilience,
+                connectivity, and sustainable development.
+              </p>
+              <p>
+                <strong>At TOUGH TEAM INFRA, we don’t just build </strong> we
+                deliver quality, meet challenges head-on, and construct with
+                purpose. From blueprint to breakthrough, our legacy is built to
+                last.
               </p>
             </div>
           </div>

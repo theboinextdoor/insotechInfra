@@ -7,43 +7,46 @@ import LaptopNavbar from './navbar/navbar-laptop';
 import MobileNavBar from './navbar/navbar-mobile';
 import { MotionDiv } from './motion-wrapper';
 import { containerVarients } from '@/utils/constant';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isTopSection, setIsTopSection] = useState(true);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-      const heroSectionHeight = 600; // adjust this based on your first section height
+      const heroSectionHeight = 600;
 
-      // Transparent effect only when in top section
-      setIsTopSection(currentScroll < heroSectionHeight);
+      // Enable transparency on top section (only on homepage)
+      if (pathname === '/') {
+        setIsTopSection(currentScroll < heroSectionHeight);
+      } else {
+        setIsTopSection(false);
+      }
 
-      // Show/hide header on scroll direction (for >=768px)
+      // Hide header when scrolling down (only for wider screens)
       if (window.innerWidth >= 768) {
-        if (currentScroll > lastScrollY) {
-          setShowHeader(false);
-        } else {
-          setShowHeader(true);
-        }
+        setShowHeader(currentScroll < lastScrollY);
         setLastScrollY(currentScroll);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, pathname]);
+
+  const headerClasses = `
+    fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ease-in-out
+    ${showHeader ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+    ${isTopSection && isHomePage ? 'bg-transparent' : 'bg-white/60 shadow-md'}
+  `;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ease-in-out ${
-        showHeader ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-      } ${isTopSection ? 'bg-transparent' : 'bg-blue-950 shadow-md'} sm:${
-        isTopSection ? 'bg-transparent' : 'bg-blue-950 shadow-md'
-      } bg-blue-950`}
-    >
+    <header className={headerClasses}>
       <div className="w-full flex items-center justify-between py-2 md:py-4 lg:py-6 2xl:py-3 px-4 sm:px-6 lg:px-16 2xl:px-32">
         <MotionDiv
           variants={containerVarients}

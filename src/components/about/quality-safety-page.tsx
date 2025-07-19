@@ -16,7 +16,7 @@ import {
   MessageSquareText,
   FlaskConical,
 } from 'lucide-react'; // Comprehensive icons for policies
-import { MotionDiv } from '../common/motion-wrapper';
+import { MotionDiv, MotionH2 } from '../common/motion-wrapper';
 import ContentHeading from '../home/content-heading';
 import Link from 'next/link';
 
@@ -48,7 +48,7 @@ export default function QualitySafetyPage() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: 'easeOut',
       },
     },
@@ -135,6 +135,24 @@ export default function QualitySafetyPage() {
     },
   ];
 
+  const itemVariantLeft: Variants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.3, ease: 'easeInOut' },
+    },
+  };
+
+  const itemVariantRight: Variants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.3, ease: 'easeInOut' },
+    },
+  };
+
   return (
     <section className="relative mt-12">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -151,23 +169,23 @@ export default function QualitySafetyPage() {
             className="text-base font-semibold uppercase tracking-wide bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent font-barlow"
             lineWidth={400}
           />
-          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight bg-gradient-to-r from-amber-500 via-yellow-400 to-stone-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight bg-gradient-to-r from-teal-500 via-emerald-400 to-stone-600 bg-clip-text text-transparent text-start">
             Our unwavering dedication to excellence and safety forms the bedrock
             of every project we undertake.
           </h1>
         </motion.div>
 
         {/* Policy Overviews Section */}
-        <motion.div
+        <MotionDiv
           className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20"
           initial="hidden"
           whileInView="visible"
           variants={sectionVariants}
         >
-          {policyCard.map((item) => (
-            <motion.div
+          {policyCard.map((item, index) => (
+            <MotionDiv
               className="bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col items-center p-8 border border-blue-100 dark:border-blue-700"
-              variants={itemVariants}
+              variants={index % 2 === 0 ? itemVariantLeft : itemVariantRight}
               key={item.id}
             >
               {item.icon}
@@ -177,24 +195,26 @@ export default function QualitySafetyPage() {
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center">
                 {item.desc}
               </p>
-            </motion.div>
+            </MotionDiv>
           ))}
-        </motion.div>
+        </MotionDiv>
 
         {/* Key Elements of Safety Policy */}
         <motion.div
           className="mb-20"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          // viewport={{ once: true, amount: 0.3 }}
           variants={sectionVariants}
         >
-          <motion.h2
+          <MotionH2
             className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white mb-12"
             variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
           >
-            Key Elements of Our Safety Policy
-          </motion.h2>
+            Pillars of Our Safety Standards
+          </MotionH2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {safetyKeyElements.map((element, index) => (
               <MotionDiv
@@ -202,6 +222,9 @@ export default function QualitySafetyPage() {
                 key={index}
                 className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md  transition-all duration-300 flex flex-col items-center text-center border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:shadow-gray-500"
                 variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
               >
                 <element.icon
                   className="text-indigo-500 mb-4"

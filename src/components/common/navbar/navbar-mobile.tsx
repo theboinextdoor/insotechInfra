@@ -25,7 +25,7 @@ const MobileNavBar = () => {
           <AlignJustify
             size={28}
             onClick={toggleMenu}
-            className="cursor-pointer text-white"
+            className="cursor-pointer text-black/70"
           />
         )}
       </div>
@@ -44,7 +44,7 @@ const MobileNavBar = () => {
               damping: 30,
               duration: 0.2,
             }}
-            className="fixed top-0 right-0 min-h-screen min-w-4/5 z-50  bg-blue-950 backdrop-blur-md shadow-2xl shadow-neutral-500/10"
+            className="fixed top-0 right-0 min-h-screen min-w-4/5 z-50  bg-blue-950/70 backdrop-blur-md shadow-2xl shadow-neutral-500/10"
           >
             <div className="py-18 flex items-center justify-center flex-col space-y-6">
               <ArrowRight

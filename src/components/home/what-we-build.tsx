@@ -12,12 +12,12 @@ const WhatWeBuild = () => {
   const menuItems = ['Utility Diversion Work', 'PEB Works'];
 
   return (
-    <section className="relative w-full py-4 md:py-10 xl:py-14 bg-[#36383D] overflow-hidden">
+    <section className="relative w-full py-4 bg-[#443B36] md:py-10 xl:py-14 overflow-hidden">
       <div className="max-w-7xl 2xl:max-w-[85rem] mx-auto mt-12 px-4 sm:px-6 lg:px-8 2xl:px-12 text-left">
         {/* Heading Line & Label */}
         <ContentHeading
           heading="What We Build"
-          className="text-white/70 text-[16px] font-barlow font-semibold"
+          className="text-white/70 text-2xl lg:text-4xl font-barlow font-semibold"
         />
 
         <div className="flex flex-col md:flex-row items-end justify-between gap-0 md:gap-12">

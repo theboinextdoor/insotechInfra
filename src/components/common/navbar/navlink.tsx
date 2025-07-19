@@ -20,9 +20,9 @@ const NavLink = ({
     <Link
       href={href}
       className={cn(
-        'transition-colors text-sm duration-200 text-white hover:text-amber-500',
+        'transition-colors text-sm duration-200 text-black/70 hover:text-amber-500',
         className,
-        isActive && 'text-amber-500'
+        isActive && 'text-amber-400'
       )}
     >
       {children}

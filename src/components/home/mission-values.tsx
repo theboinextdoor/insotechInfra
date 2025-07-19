@@ -9,7 +9,7 @@ import {
   ShieldCheck,
   Users,
 } from 'lucide-react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import ContentHeading from './content-heading';
 
 const MissionAndValues = () => {
@@ -60,24 +60,12 @@ const MissionAndValues = () => {
     },
   ];
   return (
-    <section className="relative ">
-      {/* Background Image with Backdrop */}
-      <div className="absolute inset-0 w-full h-full -z-10">
-        <Image
-          src="/gradient-background.jpg"
-          alt="Background"
-          fill
-          priority
-          quality={80}
-          className="object-cover brightness-75 backdrop-blur-md"
-        />
-      </div>
-
+    <section className="relative bg-[#004F4F]">
       {/* Main Content */}
       <div className="py-12 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12 ">
         <ContentHeading
           heading="Why Choose Us"
-          className="bg-linear-to-r from-gray-900 via-slate-800 to-gray-700 font-barlow font-semibold"
+          className="bg-linear-to-r from--500 via-slate-300 to-amber-700 font-barlow font-semibold"
         />
 
         {/* Contents */}

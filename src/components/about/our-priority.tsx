@@ -69,10 +69,10 @@ const OurPriorities = () => {
 
         <ContentHeading
           heading="Our Core Priorities"
-          className="text-base font-semibold uppercase tracking-wide bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent font-barlow  "
+          className="text-base font-semibold uppercase tracking-wide bg-gradient-to-r from-white to-orange-400 bg-clip-text text-transparent font-barlow text-[16px] "
           lineWidth={400}
         />
-        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight bg-linear-to-r from-amber-700 via-emerald-300 to-amber-400 bg-clip-text text-transparent">
+        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight bg-linear-to-r from-white via-emerald-300 to-white bg-clip-text text-transparent">
           Building the Future with Strength, Vision, and Precision.
         </h1>
 

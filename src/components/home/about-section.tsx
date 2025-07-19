@@ -45,14 +45,12 @@ const AboutSection = () => {
       className="relative w-full overflow-hidden py-4 md:py-20 lg:py-12 bg-[#00693C]  "
       id="about"
     >
-      {/* <BgGradient /> */}
-
       {/* Main Container */}
       <div className="pt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-12  ">
         <ContentHeading
           heading="Background & History"
           lineWidth={400}
-          className="font-condensed  text-3xl  sfont-semibold bg-gradient-to-r from-white via-cyan-400 to-white"
+          className="font-condensed  text-3xl lg:text-5xl  font-bold bg-gradient-to-r from-white via-slate-400 to-white"
         />
 
         {/* Paragraph */}

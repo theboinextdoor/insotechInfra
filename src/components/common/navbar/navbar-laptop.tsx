@@ -12,6 +12,7 @@ const LaptopNavbar = () => {
           className="mr-3 text-[16px] font-barlow font-semibold"
         >
           {items.label}
+          {/* <hr className="hidden hover:block h-3 w-auto" /> */}
         </NavLink>
       ))}
     </div>
